@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, Text, View, SafeAreaView,FlatList, Image, TextInput,Alert,TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView,FlatList, TouchableHighlight,Image, TextInput,Alert,TouchableOpacity } from 'react-native';
 import { Input, Button } from 'react-native-elements';
 import Form from 'react-bootstrap/Form'
 
@@ -38,7 +38,22 @@ class Login extends Component{
                 /*<Button
           title="Press me"
           onPress={() => Alert.alert('Simple Button pressed')}
-        />*/
+        />
+        
+        
+        <TextInput
+                    
+                    placeholder='Clave'
+                    onChangeText={
+                        password => this.setState({password})
+                    }
+                    class="form-control"
+                    autoCapitalize="none"
+                    placeholderTextColor='blue'
+            //onChangeText={val => this.onChangeText('username', val)}
+
+             //onPress={() => this.props.navigation.navigate('Registro')}
+                />*/
             
     }
 
@@ -46,7 +61,7 @@ class Login extends Component{
 
     myfun=()=>{
         const{username,password}=this.state;
-        alert('holaaaaaaaaaaaaaa');
+        alert(username);
     }
     
     componentDidMount(){
@@ -84,7 +99,9 @@ class Login extends Component{
                 
             
                 <Input
+                    style={styles.default}
                     placeholder='Usuario'
+                    onChangeText={username=>this.setState({username})}
                     leftIcon={
                         <Icon
                         name='user'
@@ -94,9 +111,13 @@ class Login extends Component{
                     }
                     />
 
-                    <Input
+                    <TextInput
+                    style={{height: 45,width:  150,borderColor: "gray",borderWidth: 2, alignItems:'center'}}
                     secureTextEntry={true}
                     placeholder='Clave'
+                    onChangeText={
+                        password => this.setState({password})
+                    }
                     leftIcon={
                         <Icon
                         name='key'
@@ -106,23 +127,12 @@ class Login extends Component{
                     }
                     />
 
-                <TextInput
-                    
-                    placeholder='Clave'
-                    onChangeText={
-                        password => this.setState({password})
-                    }
-                    class="form-control"
-                    autoCapitalize="none"
-                    placeholderTextColor='blue'
-            //onChangeText={val => this.onChangeText('username', val)}
-                />
+                
 
-                <Button variant="success"
-                        title="Conectar"
-
-                        onPress={() => this.props.navigation.navigate('Registro')}
-                    />
+                <TouchableHighlight
+         style={styles.botonLogin}onPress={this.onPress}>
+         <Text style={{fontWeight: 'bold',color:'white'}}> Touch Here </Text>
+        </TouchableHighlight>
 
                 </View>
 
@@ -133,12 +143,13 @@ class Login extends Component{
 
                     
 
-                    
+                    <Button
+                        title="Crear cuenta"
+                        type="clear"
+                        onPress={this.myfun}
+                        />
 
-                <Button
-                large
-                rightIcon={{name: 'code'}}
-                title='Registrate' />
+                
 
                 <Button style={{backgroundColor: 'white'}}
                     icon={
@@ -151,6 +162,8 @@ class Login extends Component{
                     iconLeft
                     title="Sign with Google"
                     />
+
+                
 
 
 
@@ -205,16 +218,30 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
     
-      marginTop: "70%"
+      marginTop: "70%",
+      margin:10
+    },
+    botonLogin:{
+        alignItems: 'center',
+    backgroundColor: '#35E119',
+    padding: 10,
+   
+
+    },
+    default:{
+        backgroundColor:'blue'
     },
     abajo: {
       
       
       
       
-      alignItems: 'flex-end',
+        
+alignItems: 'center',
+
+
       justifyContent: 'center',
-        backgroundColor: '#98FF7A',
+        
         
       
     },
