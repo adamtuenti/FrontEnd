@@ -3,6 +3,7 @@ import {createStackNavigator} from 'react-navigation-stack';
 
 import Login from './../src/Login';
 import Registro from './../src/Registro';
+
 /*import Pacientes from './../pages/Pacientes';
 import HomeAPP from './../pages/HomeAPP';
 import Home from './../screens/Home';
