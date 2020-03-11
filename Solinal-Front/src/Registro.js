@@ -26,7 +26,9 @@ class Registro extends Component{
                     autoCapitalize="none"
                     placeholderTextColor='blue'
             //onChangeText={val => this.onChangeText('username', val)}
+
                 />
+                <Text h1>Heading 1</Text>
 
                 <TextInput
                     style={styles.input}
