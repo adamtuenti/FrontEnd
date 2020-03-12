@@ -4,6 +4,8 @@ import {createStackNavigator} from 'react-navigation-stack';
 import Login from './../src/Login';
 import Registro from './../src/Registro';
 
+import Carousel from './Carousel';
+
 /*import Pacientes from './../pages/Pacientes';
 import HomeAPP from './../pages/HomeAPP';
 import Home from './../screens/Home';
@@ -13,6 +15,7 @@ import CreateTask from './../screens/CreateTask';*/
 
 const AppNavigator = createStackNavigator({
     
+  
     Login:{
         screen: Login,
         navigationOptions:()=>({
@@ -20,6 +23,7 @@ const AppNavigator = createStackNavigator({
             
         })
     },
+    
     Registro:{
         screen: Registro,
         navigationOptions:()=>({

@@ -1,0 +1,15 @@
+
+Formulario Registro
+https://herelodin.com/como-programar-una-app-en-react-native-y-redux-para-registrar-usuarios-a-travez-de-un-api-rest/
+
+npm install react-native-linear-gradient --save
+
+
+this.generalForm = new FormGroup({
+      servicios_laar: new FormControl("", [Validators.required]),
+      guia_externa: new FormControl({ value: this.data.guiaLaar.guia_externa, disabled: true }, Validators.required),
+      costoflete: new FormControl(0, [Validators.pattern("^(([0-9]+(?:\.[0-9]+)?)|([0-9]*(?:\.[0-9]+)?))$")]),
+      costoproducto: new FormControl(0, [Validators.pattern("^(([0-9]+(?:\.[0-9]+)?)|([0-9]*(?:\.[0-9]+)?))$")]),
+      cod: new FormControl({ value: this.selectCod }),
+      tipocobro: new FormControl("")
+    });

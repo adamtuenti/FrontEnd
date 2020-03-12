@@ -90,7 +90,7 @@ class Login extends Component{
                 
 
                 <Image
-                        style={{width: 175, height: 150}}
+                        style={{width: 175, height: 250}}
                         source={{uri: 'https://github.com/adamtuenti/FrontEnd/blob/master/Solinal-Front/Recurso%201.png?raw=true'}}
                         />
 
