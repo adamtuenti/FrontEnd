@@ -18,7 +18,7 @@ class Login extends Component{
           password : '',
           loading: false,
           pacientes: [],
-          url: 'https://pokeapi.co/api/v2/pokemon/'
+          url: 'http://accountsolinal.pythonanywhere.com/api/login/'
         }
         /*super(props)
             this.timestamp =1;
@@ -53,7 +53,20 @@ class Login extends Component{
             //onChangeText={val => this.onChangeText('username', val)}
 
              //onPress={() => this.props.navigation.navigate('Registro')}
-                />*/
+                />
+                
+                 <Input
+                    style={styles.default}
+                    placeholder='Usuario'
+                    onChangeText={username=>this.setState({username})}
+                    leftIcon={
+                        <Icon
+                        name='user'
+                        size={24}
+                        color='black'
+                        />
+                    }
+                    />*/
             
     }
 
@@ -86,11 +99,12 @@ class Login extends Component{
         return ( 
             <SafeAreaView >
                 <View style = {styles.container}>
+                
 
                 
 
                 <Image
-                        style={{width: 175, height: 150}}
+                        style={{width: 125, height: 175, margin:25}}
                         source={{uri: 'https://github.com/adamtuenti/FrontEnd/blob/master/Solinal-Front/Recurso%201.png?raw=true'}}
                         />
 
@@ -98,41 +112,31 @@ class Login extends Component{
                 
                 
             
-                <Input
-                    style={styles.default}
+                <TextInput
+                    style={{height: 35,width:  142,borderColor: "gray",borderWidth: 1, alignItems:'center', fontWeight: 'bold',margin:5, padding:5}}
                     placeholder='Usuario'
                     onChangeText={username=>this.setState({username})}
-                    leftIcon={
-                        <Icon
-                        name='user'
-                        size={24}
-                        color='black'
-                        />
-                    }
+                    
                     />
 
                     <TextInput
-                    style={{height: 45,width:  150,borderColor: "gray",borderWidth: 2, alignItems:'center'}}
-                    secureTextEntry={true}
-                    placeholder='Clave'
+                        style={{height: 35,width:  142,borderColor: "gray",borderWidth: 1, alignItems:'center', fontWeight: 'bold', margin:5, padding:5}}
+                        secureTextEntry={true}
+                        placeholder='Clave'
                     onChangeText={
                         password => this.setState({password})
                     }
-                    leftIcon={
-                        <Icon
-                        name='key'
-                        size={24}
-                        color='black'
-                        />
-                    }
+                    
                     />
 
                 
 
                 <TouchableHighlight
-         style={styles.botonLogin}onPress={this.onPress}>
-         <Text style={{fontWeight: 'bold',color:'white'}}> Touch Here </Text>
+         style={styles.botonLogin} onPress={this.myfun}>
+         <Text style={{fontWeight: 'bold',color:'white'}}> Conectar </Text>
         </TouchableHighlight>
+
+        
 
                 </View>
 
@@ -151,17 +155,20 @@ class Login extends Component{
 
                 
 
-                <Button style={{backgroundColor: 'white'}}
-                    icon={
-                        <Icon
-                        name="google"
-                        size={15}
-                        color="blue"
-                        />
-                    }
-                    iconLeft
-                    title="Sign with Google"
-                    />
+                <TouchableHighlight style={styles.botonGoogle}>
+            <View>
+             
+
+            <Icon name="google" size={15}
+                color='#3b5998'
+                style={{height:25,width:147}}>
+            <Text style={{color: 'black'}}>    Sign with Google</Text>
+            </Icon>
+
+            
+            
+            </View>
+            </TouchableHighlight>
 
                 
 
@@ -221,24 +228,43 @@ const styles = StyleSheet.create({
       marginTop: "70%",
       margin:10
     },
+
     botonLogin:{
         alignItems: 'center',
-    backgroundColor: '#35E119',
-    padding: 10,
+        backgroundColor: '#35E119',
+        padding: 10,
+        width:142,
+        borderRadius: 4,
+        borderWidth: 1,
+        borderColor: '#d6d7da',
    
+
+    },botonGoogle:{
+        
+        padding: 10,
+        borderRadius: 4,
+        borderWidth: 1,
+        borderColor: '#d6d7da',
+        alignItems: 'center',
+        justifyContent: 'center',
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 1.84,
+
+        elevation: 1,
 
     },
     default:{
         backgroundColor:'blue'
     },
-    abajo: {
-      
-      
-      
-      
-        
-alignItems: 'center',
+    abajo: {    
+        alignItems: 'center',
 
+       // flexDirection: 'row',
 
       justifyContent: 'center',
         
